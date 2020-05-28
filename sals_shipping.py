@@ -67,14 +67,14 @@ def drone_shipping(weight):
   return cost * weight
 
 def all_shipping(weight):
-  premium = 125.00
-  ground = ground_shipping(weight)
   drone = drone_shipping(weight)
+  ground = ground_shipping(weight)
+  premium = 125.00
   if ground < drone and ground < premium:
-    print("Ground is the cheapest")
+    print("Ground is the cheapest and it will cost you " + str(ground))
   elif drone < premium and drone < ground:
-    print("drone is the cheapest")
+    print("drone is the cheapest and it will cost you " + str(drone))
   elif premium < ground and premium < drone:
-    print("Premium is the cheapest")
+    print("Premium is the cheapest and it will cost you " + str(premium))
 
 print(all_shipping(80))
