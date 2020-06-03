@@ -97,16 +97,16 @@ print(more_frequent_item([2, 3, 3, 2, 3, 2, 3, 2, 3], 2, 3))
 #Write your function here
 # I need to double index 2 and return new list
 #  my option below
-def double_index(lst, index):
-  new_list = []
-  if True:
-    lst[index] = lst[in]*2
-    return new_list + lst
-  else:
-    return lst
+# def double_index(lst, index):
+#     new_list = []
+#     if True:
+#       lst[index] = lst[in]*2
+#       return new_list + lst
+#     else:
+#       return lst
 
 #Uncomment the line below when your function is done
-print(double_index([3, 8, -10, 12], 2))
+# print(double_index([3, 8, -10, 12], 2))
 
 # codeacademy option below
 #Write your function here
@@ -137,3 +137,28 @@ def middle_element(lst):
 #Uncomment the line below when your function is done
 print(middle_element([5, 2, -10, -4, 4, 5]))
 
+# 10
+# Write your function here --> this will return the elements divisible by 10
+
+def divisible_by_ten(nums):
+  count = 0
+  for i in nums:
+    if i % 10 == 0:
+      count += 1
+  return count
+
+
+# Uncomment the line below when your function is done
+print(divisible_by_ten([20, 25, 30, 35, 40]))
+
+# 5
+#Write your function here --> this will print each names on the list on a new list will Hello string
+# need to print greeting with name on it. looping through the list and appending each element to new list string
+def add_greetings(names):
+  empty_list = []
+  for name in names:
+    empty_list.append("Hello, " + name)
+  return empty_list
+
+#Uncomment the line below when your function is done
+print(add_greetings(["Owen", "Max", "Sophie"]))
