@@ -265,8 +265,6 @@ print(over_nine_thousand([8000, 900, 120, 5000]))
 
 # 11
 
-
-
 #Write your function here
 def over_nine_thousand(lst):
   num = 0
@@ -279,3 +277,16 @@ def over_nine_thousand(lst):
 
 #Uncomment the line below when your function is done
 print(over_nine_thousand([8000, 900, 120, 5000]))
+
+# 12
+
+ #Write your function here
+def max_num(nums):
+  max = nums[0] # I initially created a variable 0. but I needed to look at index 0 value 50 to start comparing
+  for i in nums:
+    if i > max:
+     max = i
+  return max
+
+#Uncomment the line below when your function is done
+print(max_num([50, -10, 0, 75, 20]))
