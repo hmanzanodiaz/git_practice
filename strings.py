@@ -36,14 +36,18 @@ common_letters('manhattan', 'san francisco')
 # 13
 
 def username_generator(first_name, last_name):
-#     if len(first_name) < 3: THIS IS NOT NECESSARY
-#         return first_name
-#     elif len(last_name) < 4:
-#         return last_name
+#     if len(first_name) < 3:
+#     username = first_name
+#     else:
+#
+#     return username
+#     if len(last_name) < 4:
+#     username = last_name
     username = first_name[:3] + last_name[:4]
     return username
 
-user = username_generator("Zoe", "Lee")
+user = username_generator("Zo", "Lee")
+print(user)
 
 def password_generator(username):
     password = ""
@@ -52,3 +56,31 @@ def password_generator(username):
     print(password)
 
 password_generator("ZoeLee")
+
+# 14
+
+authors = "Audre Lorde, William Carlos Williams, Gabriela Mistral, Jean Toomer, An Qi, Walt Whitman, Shel Silverstein, Carmen Boullosa, Kamala Suraiyya, Langston Hughes, Adrienne Rich, Nikki Giovanni"
+
+author_names = authors.split(", ")
+print(author_names)
+
+author_last_names = []
+for names in author_names:
+  author_last_name.append(names.split()[-1]) # what I do is to take each index (names) and split it. then take the last index from that sublist
+
+print(author_last_names)
+
+# 15
+
+# def evens(name):
+#     for i in len(name):
+#         if i % 2 == 0:
+#             return name[i]
+# evens("Watermelon")
+
+def print_some_characters(word):
+  for i in range(len(word)):
+    if i % 2 == 0:
+      print(word[i])
+
+print_some_characters("watermelon")
