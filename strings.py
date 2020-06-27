@@ -64,11 +64,11 @@ authors = "Audre Lorde, William Carlos Williams, Gabriela Mistral, Jean Toomer, 
 author_names = authors.split(", ")
 print(author_names)
 
-author_last_names = []
+author_last_name = []
 for names in author_names:
   author_last_name.append(names.split()[-1]) # what I do is to take each index (names) and split it. then take the last index from that sublist
 
-print(author_last_names)
+print(author_last_name)
 
 # 15
 
@@ -84,3 +84,24 @@ def print_some_characters(word):
       print(word[i])
 
 print_some_characters("watermelon")
+
+# 15
+
+love_maybe_lines = ['Always    ', '     in the middle of our bloodiest battles  ', 'you lay down your arms', '           like flowering mines    ','\n' ,'   to conquer me home.    ']
+
+love_maybe_lines_stripped = []
+
+for words in love_maybe_lines:
+  love_maybe_lines_stripped.append(words.strip()) # Appending on one list the strips os words
+
+love_maybe_full = "\n".join(love_maybe_lines_stripped) # joining in separate lines
+print(love_maybe_full)
+
+#16
+def poem_title_card(poet, title):
+  return "The poem \"{}\" is written by {}.".format(title, poet)
+
+poem_title_card("Walt Whitman", "I Hear America Singing")
+
+#17
+
