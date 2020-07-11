@@ -4,8 +4,8 @@
 # check len of both list and return the last item. if equal return [-1] of lst1
 
 def larger_list(lst1, lst2):
-  if len(lst1) > len(lst2): # len() returns the number of elements on a list
-    return lst1[-1]
+  if len(lst1) > len(lst2): # len() returns the number of elements on a list. here only looks at the number of elements and not the value
+    return lst1[-1] # here is returning the list if met the condition
   elif len(lst1) < len(lst2):
     return lst2[-1]
   else:
@@ -34,9 +34,9 @@ print(more_than_n([2, 4, 6, 2, 3, 2, 1, 2], 2, 3))
 
 #Write your function here
 def append_size(lst):
-  nums = [len(lst)] # creates a new list of the LST length
+  nums = [len(lst)] # creates a new list with the length of LST
   new_list = lst + nums # this joins the elements of LST and adds the number of elements of LST in new_list
-  return new_list
+  return new_list # [23, 42, 108, 3]
 
 #Uncomment the line below when your function is done
 print(append_size([23, 42, 108]))
@@ -46,7 +46,7 @@ print(append_size([23, 42, 108]))
 #Write your function here
 def combine_sort(lst1, lst2):
   new_list = lst1 + lst2 # combines 2 lists
-  new_list.sort() # sort() sorts that new list an ascending order
+  new_list.sort() # sort() sorts that new_list in an ascending order. Sort() modifies same list, whether sorted() creates a new list
   return new_list
 #Uncomment the line below when your function is done
 print(combine_sort([4, 10, 2, 5], [-10, 2, 5, 10]))
@@ -54,7 +54,7 @@ print(combine_sort([4, 10, 2, 5], [-10, 2, 5, 10]))
 # 5
 
 def every_three_nums(start):
-  return list(range(start, 101, 3)) # creates a list of the range every 3 numbers
+  return list(range(start, 101, 3)) # list() creates a list of the range (start, 101) returning every 3 numbers
 
 #Uncomment the line below when your function is done
 print(every_three_nums(80))
@@ -74,7 +74,8 @@ print(every_three_nums(80))
 
 #---- correct code below
 def remove_middle(lst, start, end):
-  return lst[:start+1] + lst[end+1:] # this take the first and last item +1 more only an returns those values
+  return lst[:start+1] + lst[end+1:] # this take the first and last item +1 (to be inclusive), an returns those values
+# slicing is use to return part of the indexes of a list
 
 #Uncomment the line below when your function is done
 print(remove_middle([4, 8, 15, 16, 23, 42], 1, 3))
@@ -83,7 +84,7 @@ print(remove_middle([4, 8, 15, 16, 23, 42], 1, 3))
 
 #Write your function here
 def more_frequent_item(lst, item1, item2):
-  if lst.count(item1) > lst.count(item2):
+  if lst.count(item1) > lst.count(item2): # count(item) looks at how many times that item is on the list
     return item1
   elif lst.count(item1) < lst.count(item2):
     return item2
@@ -109,14 +110,14 @@ print(more_frequent_item([2, 3, 3, 2, 3, 2, 3, 2, 3], 2, 3))
 # print(double_index([3, 8, -10, 12], 2))
 
 # codeacademy option below
-#Write your function here
+# Write your function here to double index in the middle
 def double_index(lst, index):
   # Checks to see if index is too big
   if index >= len(lst): # checks whether index(2) is greater than 4
     return lst
   else:
     # Gets the original list up to index
-    new_lst = lst[0:index] # creates a new list from 3 to 8 (index 0:2 not including 2)
+    new_lst = lst[0:index] # creates a new list from 3 to -10 (index 0:2 not including 2)
  # Adds double the value at index to the new list
   new_lst.append(lst[index]*2) # appends to the new list the calculation of index 2 (-10) * 2 and adds it.
   #  Adds the rest of the original list
@@ -127,9 +128,10 @@ def double_index(lst, index):
 print(double_index([3, 8, -10, 12], 2))
 
 # 9
+
 def middle_element(lst):
   if len(lst) % 2 == 0: # checking whether the length of the list is divisible by 2 (6/2 == 0 --> YES)
-    sum = lst[int(len(lst)/2)] + lst[int(len(lst)/2) - 1]
+    sum = lst[int(len(lst)/2)] + lst[int(len(lst)/2) - 1] # first part takes -4 and second one -10 = -14
 # first part take half of the list length () and returns the INT of that index. second part same but adding 1 more index, (-4)
     return sum / 2 # takes -14 divided by 2 == -7.0
   else:
@@ -143,9 +145,9 @@ print(middle_element([5, 2, -10, -4, 4, 5]))
 
 def divisible_by_ten(nums):
   count = 0 # create empty variable that will store the final value
-  for i in nums:
+  for i in nums: # this goes through every index on the list
     if i % 10 == 0: # checks element i to see if is divisible by 10
-      count += 1 # adds one more element to the variable with value 0 to return final count
+      count += 1 # adds one more element to the variable with initial value 0, to return final count = 3. so COUNT will return only the aggregation
   return count
 # this helps count the number of elements that meet my criteria
 
@@ -185,7 +187,7 @@ print(add_greetings(["Owen", "Max", "Sophie"]))
 
 #Write your function here
 def delete_starting_evens(lst):
-  while (len(lst) > 0 and lst[0] % 2 == 0): #checks for whether the list has more than 1 number and index is divisible by 2
+  while (len(lst) > 0 and lst[0] % 2 == 0): #checks for whether the list has more than 1 number and index (value) is divisible by 2
     lst = lst[1:] # Line 3 states that if it is an even number, lst should now equal lst with the first index (index 0) removed.
   return lst
 
@@ -304,17 +306,38 @@ print(max_num([50, -10, 0, 75, 20]))
 #           equals.append(a)
 #     return equals
 
-
 #Write your function here
 def same_values(lst1, lst2):
   new_lst = []
-  for index in range(len(lst1)): # range() and len() looks at the index
+  for index in range(len(lst1)): # range() and len() looks at the index and not the value of it. range(len(obj)) to iterate over the numbers from 0 up to the length of the iterable obj.
     if lst1[index] == lst2[index]:
       new_lst.append(index)
   return new_lst
 
 #Uncomment the line below when your function is done
 print(same_values([5, 1, -10, 3, 3], [5, 10, -10, 3, 5]))
+
+# 14
+# #Write your function here
+# my solution not correct below ----------
+
+# def reversed_list(lst1, lst2):
+#   reverse = lst1.sort(reverse=True)
+#   if lst2 == reverse:
+#     return True
+#   else:
+#     return False
+
+#Write your function here
+def reversed_list(lst1, lst2):
+  for index in range(len(lst1)): # going through the range of indexes
+    if lst1[index] != lst2[len(lst2) - 1 - index]: # starts at the end and move through indexes in reverse order
+      return False
+  return True
+#Uncomment the lines below when your function is done
+print(reversed_list([1, 2, 3], [3, 2, 1]))
+print(reversed_list([1, 5, 3], [3, 2, 1]))
+
 
 
 

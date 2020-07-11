@@ -17,3 +17,4 @@ first time Repository and File
 4. echo "Hello Git and GitHub" >> README.txt to create a new README file (more on this later) with some sample text.
 5. git add README.txt to add the new file to the Git staging area.
 6. git commit -m "First commit" to make your first commit with the new README file.
+7. https://www.codecademy.com/courses/learn-git/articles/f1-u3-git-setup

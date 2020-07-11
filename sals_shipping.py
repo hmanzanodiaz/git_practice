@@ -78,3 +78,5 @@ def all_shipping(weight):
     print("Premium is the cheapest and it will cost you " + str(premium))
 
 print(all_shipping(80))
+
+
